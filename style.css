@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press start 2p", sans-serif;
+}
+
+header {
+  height: 35vh;
+}
+
+header {
+  background-image: url(IMG/MACHUPICHU.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+  padding: 3rem;
+}
+.box-header {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  font-size: 5rem;
+  padding-top: 5rem;
+}
+
+header p {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+main {
+  /* height: 65vh; */
+
+  margin: 2rem;
+  padding: 2rem;
+  border: 2px solid black;
+}
+
+.box-game {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 5rem;
+}
+.img-main {
+  width: 30rem;
+}
+
+.box-guess-score {
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  gap: 2.5rem;
+}
+
+.message {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.country {
+  width: 30rem;
+  background-color: black;
+  color: #fff;
+  font-size: 3rem;
+  font-family: inherit;
+  text-align: center;
+  padding: 2rem 0;
+}
+.guess {
+  height: 4rem;
+  width: 30rem;
+  border: 2px solid black;
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
+.box-btn {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  font-size: 1.5rem;
+  font-family: inherit;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.score,
+.hightscore {
+  font-size: 1rem;
+}
+
+.score {
+}
+
+.num-score {
+}
+
+ {
+}
+
+.num-highscore {
+}
+
+.wrong-guess {
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nabla&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Guess Latinoamerica Country</title>
+  </head>
+  <body>
+    <header>
+      <div class="box-header">
+        <h1>Guess The Country in Latinoamerica</h1>
+        <p>Press A-z to Guess</p>
+      </div>
+    </header>
+    <main>
+      <div class="box-game">
+        <section class="box-img">
+          <img class="img-main" src="IMG\MAP2.jpg" alt="Latinoamerica map'" />
+        </section>
+
+        <section class="box-guess-score">
+          <p class="message">🕵️‍♂️ Start guess!</p>
+          <div class="country">?</div>
+          <input type="text" class="guess" />
+          <div class="box-btn">
+            <button class="btn game">Game</button>
+            <button class="btn again">Re-Start</button>
+          </div>
+
+          <p class="score">💯 Score: <span class="num-score">10</span></p>
+          <p class="hightscore">
+            🥇 Hightscore:<span class="num-highscore">0</span>
+          </p>
+          <p class="wrong-guess">chile</p>
+        </section>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
