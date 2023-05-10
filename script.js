@@ -27,28 +27,29 @@ secretCountry.charAt(0);
 // ---Initial Score & Highscore
 let score = 10;
 let highscore = 0;
+let wrongGuess = []; // array to log the wrong answer
+let firstLetter = secretCountry.charAt(0).toUpperCase(); // first letter SecretCountry
 
 const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
 };
 
-// ALE ESTA PARTE DEBES CORREGIR . BUSAR MANERA DE COMO OBTENER LA PRIMERA LETRA
-
 // --------------- ---SET UP GAME---------------
 
 document.querySelector(".game").addEventListener("click", function () {
-  //
   let guessCountry = document.querySelector(".guess").value;
-  console.log(guessCountry, typeof guessCountry);
+  console.log(guessCountry);
 
-  //---logic game start
+  //---Logic game start
 
+  // If there are no answer----
   if (!guessCountry) {
     document.querySelector(".message").textContent = "⛔ Write a country!";
+
+    // If is Correct answer----
   } else if (guessCountry === secretCountry) {
     document.querySelector(".message").textContent = "🎉You win!";
     document.querySelector(".country").textContent = secretCountry;
-
     document.querySelector(".country").textContent =
       secretCountry.toUpperCase();
 
@@ -58,23 +59,23 @@ document.querySelector(".game").addEventListener("click", function () {
       highscore = score;
       document.querySelector(".num-highscore").textContent = highscore;
     }
+
+    // If answer is wrong----
   } else if (guessCountry !== secretCountry) {
     if (score > 1) {
+      //  Hint first letter
       document.querySelector(
         ".message"
-      ).textContent = `🔍Country start with letter ${secretCountry
-        .charAt(0)
-        .toUpperCase()}`;
-      // console.log(secretCountry.split(""));
+      ).textContent = `🔍Country start with letter ${firstLetter}`;
 
-      let arr = [];
-      function guardarCountries() {
-        const newArr = document.querySelector(".guess").value;
-        arr.push[newArr];
-        console.log(arr);
-      }
-
+      // Decresing score (lives)
       document.querySelector(".num-score").textContent = --score;
+
+      // Log the wrong answer in the Document
+      wrongGuess.push(guessCountry);
+      document.querySelector(".wrong-guess").innerHTML = wrongGuess;
+
+      // Log in document you lost
     } else {
       document.querySelector(".message").textContent = "   💀 You lost !!! ";
       document.querySelector(".num-score").textContent = 0;
