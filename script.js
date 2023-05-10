@@ -87,26 +87,23 @@ document.querySelector(".game").addEventListener("click", function (e) {
   }
 });
 
-/*  ALE REVISAR LOS SIGUIENTE:
-
-
-2. Crear un input al final para poder ir creando un array con las respuestas incorrectas
-
-3.crear un array con los nuevos value
-
-4. que el juego se ejecute tambien cuando presionamos el boton "enter'"
-
-*/
 document.querySelector(".again").addEventListener("click", function (e) {
   e.preventDefault();
+
   score = 10;
   secretCountry = countries[Math.floor(Math.random() * countries.length)];
+  console.log(secretCountry);
+  firstLetter = secretCountry.charAt(0).toUpperCase();
+  console.log(firstLetter);
+  wrongGuess = [];
 
-  document.querySelector(".guess").value = " ";
+  document.querySelector(".guess").value = "";
   document.querySelector(".country").textContent = "?";
   document.querySelector(".num-highscore").textContent = highscore;
   document.querySelector(".num-score").textContent = 10;
-  document.querySelector(".message").textContent = "🕵️‍♂️ Start guess again !!!";
+  document.querySelector(
+    ".message"
+  ).textContent = `New country start with ${firstLetter}`;
 
   document.querySelector("body").style.backgroundColor = "#FFF";
   document.querySelector(".wrong-guess").textContent = "Your guess";
