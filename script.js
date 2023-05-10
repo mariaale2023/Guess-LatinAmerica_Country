@@ -97,7 +97,8 @@ document.querySelector(".game").addEventListener("click", function (e) {
 4. que el juego se ejecute tambien cuando presionamos el boton "enter'"
 
 */
-document.querySelector(".again").addEventListener("click", function () {
+document.querySelector(".again").addEventListener("click", function (e) {
+  e.preventDefault();
   score = 10;
   secretCountry = countries[Math.floor(Math.random() * countries.length)];
 
@@ -106,5 +107,7 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".num-highscore").textContent = highscore;
   document.querySelector(".num-score").textContent = 10;
   document.querySelector(".message").textContent = "🕵️‍♂️ Start guess again !!!";
+
   document.querySelector("body").style.backgroundColor = "#FFF";
+  document.querySelector(".wrong-guess").textContent = "Your guess";
 });
