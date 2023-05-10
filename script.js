@@ -90,11 +90,10 @@ document.querySelector(".game").addEventListener("click", function (e) {
 document.querySelector(".again").addEventListener("click", function (e) {
   e.preventDefault();
 
+  //  Restore the started values
   score = 10;
   secretCountry = countries[Math.floor(Math.random() * countries.length)];
-  console.log(secretCountry);
   firstLetter = secretCountry.charAt(0).toUpperCase();
-  console.log(firstLetter);
   wrongGuess = [];
 
   document.querySelector(".guess").value = "";
