@@ -24,11 +24,6 @@ console.log(secretCountry);
 
 secretCountry.charAt(0);
 
-// function guess(countries) {
-//   return countries[Math.floor(Math.random() * countries.length)];
-// }
-// console.log(guess(countries));
-
 // ---Initial Score & Highscore
 let score = 10;
 let highscore = 0;
@@ -79,7 +74,7 @@ document.querySelector(".game").addEventListener("click", function () {
         console.log(arr);
       }
 
-      document.querySelector(".num-score").textContent = score--;
+      document.querySelector(".num-score").textContent = --score;
     } else {
       document.querySelector(".message").textContent = "   💀 You lost !!! ";
       document.querySelector(".num-score").textContent = 0;
