@@ -34,9 +34,9 @@ const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
 };
 
-// --------------- ---SET UP GAME---------------
+// ------------------SET UP GAME---------------
 
-document.querySelector(".game").addEventListener("click", function (e) {
+document.querySelector(".game").addEventListener("click", (e) => {
   let guessCountry = document.querySelector(".guess").value;
   console.log(guessCountry);
 
@@ -87,7 +87,19 @@ document.querySelector(".game").addEventListener("click", function (e) {
   }
 });
 
-document.querySelector(".again").addEventListener("click", function (e) {
+// ------------------SET UP Enter Keybord---------------
+document.querySelector(".guess").addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    // Cancel the default action, if needed
+    e.preventDefault();
+    // Trigger the button element with a click
+    document.querySelector(".game").click();
+  }
+});
+
+// ------------------SET UP RESTAR---------------
+
+document.querySelector(".again").addEventListener("click", (e) => {
   e.preventDefault();
 
   //  Restore the started values
