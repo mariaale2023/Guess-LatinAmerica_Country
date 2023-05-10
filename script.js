@@ -36,7 +36,7 @@ const displayMessage = function (message) {
 
 // --------------- ---SET UP GAME---------------
 
-document.querySelector(".game").addEventListener("click", function () {
+document.querySelector(".game").addEventListener("click", function (e) {
   let guessCountry = document.querySelector(".guess").value;
   console.log(guessCountry);
 
@@ -74,6 +74,10 @@ document.querySelector(".game").addEventListener("click", function () {
       // Log the wrong answer in the Document
       wrongGuess.push(guessCountry);
       document.querySelector(".wrong-guess").innerHTML = wrongGuess;
+
+      // Clean input field
+      e.preventDefault();
+      document.querySelector(".guess").value = "";
 
       // Log in document you lost
     } else {
