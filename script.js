@@ -13,7 +13,7 @@ const countries = [
   "guyana",
   "paraguay",
   "peru",
-  "surinam",
+  "suriname",
   "uruguay",
   "venezuela",
 ];
@@ -25,7 +25,7 @@ console.log(secretCountry);
 secretCountry.charAt(0);
 
 // ---Initial Score & Highscore
-let score = 5;
+let score = 3;
 let highscore = 0;
 let wrongGuess = []; // array to log the wrong answer
 let firstLetter = secretCountry.charAt(0).toUpperCase(); // first letter SecretCountry
@@ -38,6 +38,7 @@ const numHighscore = document.querySelector(".num-highscore");
 const numScore = document.querySelector(".num-score");
 const message = document.querySelector(".message");
 const body = document.querySelector("body");
+const main = document.querySelector("main");
 const wrongAnswer = document.querySelector(".wrong-guess");
 
 // ------------------SET UP GAME---------------
@@ -55,6 +56,7 @@ btnGame.addEventListener("click", (e) => {
     message.textContent = "🎉You win!";
     hiddenCountry.textContent = secretCountry.toUpperCase();
     body.style.backgroundColor = "#73C6B6";
+    main.style.backgroundColor = "#d6f4ee";
 
     if (score > highscore) {
       highscore = score;
@@ -102,7 +104,7 @@ btnRestart.addEventListener("click", (e) => {
   e.preventDefault();
 
   //  Restore the started values
-  score = 5;
+  score = 3;
   secretCountry = countries[Math.floor(Math.random() * countries.length)];
   firstLetter = secretCountry.charAt(0).toUpperCase();
   wrongGuess = [];
@@ -111,8 +113,9 @@ btnRestart.addEventListener("click", (e) => {
   inputGuessCountry.disabled = false;
   hiddenCountry.textContent = "?";
   numHighscore.textContent = highscore;
-  numScore.textContent = 5;
+  numScore.textContent = 3;
   message.textContent = `New country start with ${firstLetter}`;
-  body.style.backgroundColor = "#FFF";
+  body.style.backgroundColor = "#000";
+  main.style.backgroundColor = "#fff";
   wrongAnswer.textContent = "Your guess";
 });
