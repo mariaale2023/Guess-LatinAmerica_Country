@@ -43,7 +43,7 @@ const wrongAnswer = document.querySelector(".wrong-guess");
 // ------------------SET UP GAME---------------
 
 btnGame.addEventListener("click", (e) => {
-  let guessCountry = inputGuessCountry.value;
+  let guessCountry = inputGuessCountry.value.toLowerCase();
   console.log(guessCountry);
 
   // No answer
