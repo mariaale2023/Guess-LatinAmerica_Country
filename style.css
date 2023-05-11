@@ -11,6 +11,7 @@ html {
 
 body {
   font-family: "Press start 2p", sans-serif;
+  max-width: 80rem;
 }
 
 header {
@@ -18,12 +19,12 @@ header {
 }
 
 header {
-  background-image: url(IMG/MACHUPICHU.jpg);
+  /* background-image: url(IMG/MACHUPICHU.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   opacity: 1;
-  padding: 3rem;
+  padding: 3rem; */
 }
 .box-header {
   display: flex;
@@ -34,7 +35,7 @@ header {
 }
 
 h1 {
-  color: #fff;
+  color: black;
   font-size: 5rem;
   padding-top: 5rem;
 }
@@ -105,19 +106,4 @@ main {
 .score,
 .hightscore {
   font-size: 1rem;
-}
-
-.score {
-}
-
-.num-score {
-}
-
- {
-}
-
-.num-highscore {
-}
-
-.wrong-guess {
 }
