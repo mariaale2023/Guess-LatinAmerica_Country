@@ -61,6 +61,8 @@ btnGame.addEventListener("click", (e) => {
       numHighscore.textContent = highscore;
     }
 
+    inputGuessCountry.disabled = true;
+
     // Wrong answer
   } else if (guessCountry !== secretCountry) {
     if (score > 1) {
@@ -106,6 +108,7 @@ btnRestart.addEventListener("click", (e) => {
   wrongGuess = [];
 
   inputGuessCountry.value = "";
+  inputGuessCountry.disabled = false;
   hiddenCountry.textContent = "?";
   numHighscore.textContent = highscore;
   numScore.textContent = 10;
