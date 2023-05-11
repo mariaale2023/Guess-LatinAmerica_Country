@@ -2,7 +2,7 @@
 
 // ---------DEFINITION VARAIBLE--------------------
 
-// ---array list of country
+// List of country
 const countries = [
   "argentina",
   "bolivia",
@@ -30,76 +30,73 @@ let highscore = 0;
 let wrongGuess = []; // array to log the wrong answer
 let firstLetter = secretCountry.charAt(0).toUpperCase(); // first letter SecretCountry
 
-const displayMessage = function (message) {
-  document.querySelector(".message").textContent = message;
-};
+const btnGame = document.querySelector(".game");
+const btnRestart = document.querySelector(".again");
+const inputGuessCountry = document.querySelector(".guess");
+const hiddenCountry = document.querySelector(".country");
+const numHighscore = document.querySelector(".num-highscore");
+const numScore = document.querySelector(".num-score");
+const message = document.querySelector(".message");
+const body = document.querySelector("body");
+const wrongAnswer = document.querySelector(".wrong-guess");
 
 // ------------------SET UP GAME---------------
 
-document.querySelector(".game").addEventListener("click", (e) => {
-  let guessCountry = document.querySelector(".guess").value;
+btnGame.addEventListener("click", (e) => {
+  let guessCountry = inputGuessCountry.value;
   console.log(guessCountry);
 
-  //---Logic game start
-
-  // If there are no answer----
+  // No answer
   if (!guessCountry) {
-    document.querySelector(".message").textContent = "⛔ Write a country!";
+    message.textContent = "⛔ Write a country!";
 
-    // If is Correct answer----
+    // Correct answer
   } else if (guessCountry === secretCountry) {
-    document.querySelector(".message").textContent = "🎉You win!";
-    document.querySelector(".country").textContent = secretCountry;
-    document.querySelector(".country").textContent =
-      secretCountry.toUpperCase();
-
-    document.querySelector("body").style.backgroundColor = "#73C6B6";
+    message.textContent = "🎉You win!";
+    hiddenCountry.textContent = secretCountry.toUpperCase();
+    body.style.backgroundColor = "#73C6B6";
 
     if (score > highscore) {
       highscore = score;
-      document.querySelector(".num-highscore").textContent = highscore;
+      numHighscore.textContent = highscore;
     }
 
-    // If answer is wrong----
+    // Wrong answer
   } else if (guessCountry !== secretCountry) {
     if (score > 1) {
       //  Hint first letter
-      document.querySelector(
-        ".message"
-      ).textContent = `🔍Country start with letter ${firstLetter}`;
+      message.textContent = `🔍Country start with letter ${firstLetter}`;
 
-      // Decresing score (lives)
-      document.querySelector(".num-score").textContent = --score;
+      // Decresing score
+      numScore.textContent = --score;
 
-      // Log the wrong answer in the Document
+      // Log wrong answer in Doc
       wrongGuess.push(guessCountry);
-      document.querySelector(".wrong-guess").innerHTML = wrongGuess;
+      wrongAnswer.innerHTML = wrongGuess;
 
       // Clean input field
       e.preventDefault();
-      document.querySelector(".guess").value = "";
+      inputGuessCountry.value = "";
 
-      // Log in document you lost
+      // User lost
     } else {
-      document.querySelector(".message").textContent = "   💀 You lost !!! ";
-      document.querySelector(".num-score").textContent = 0;
+      message.textContent = "   💀 You lost !!! ";
+      numScore.textContent = 0;
     }
   }
 });
 
-// ------------------SET UP Enter Keybord---------------
-document.querySelector(".guess").addEventListener("keypress", (e) => {
+// -----------Trigger the button element with a click--------------
+inputGuessCountry.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
-    // Cancel the default action, if needed
     e.preventDefault();
-    // Trigger the button element with a click
-    document.querySelector(".game").click();
+    btnGame.click();
   }
 });
 
 // ------------------SET UP RESTAR---------------
 
-document.querySelector(".again").addEventListener("click", (e) => {
+btnRestart.addEventListener("click", (e) => {
   e.preventDefault();
 
   //  Restore the started values
@@ -108,14 +105,11 @@ document.querySelector(".again").addEventListener("click", (e) => {
   firstLetter = secretCountry.charAt(0).toUpperCase();
   wrongGuess = [];
 
-  document.querySelector(".guess").value = "";
-  document.querySelector(".country").textContent = "?";
-  document.querySelector(".num-highscore").textContent = highscore;
-  document.querySelector(".num-score").textContent = 10;
-  document.querySelector(
-    ".message"
-  ).textContent = `New country start with ${firstLetter}`;
-
-  document.querySelector("body").style.backgroundColor = "#FFF";
-  document.querySelector(".wrong-guess").textContent = "Your guess";
+  inputGuessCountry.value = "";
+  hiddenCountry.textContent = "?";
+  numHighscore.textContent = highscore;
+  numScore.textContent = 10;
+  message.textContent = `New country start with ${firstLetter}`;
+  body.style.backgroundColor = "#FFF";
+  wrongAnswer.textContent = "Your guess";
 });
