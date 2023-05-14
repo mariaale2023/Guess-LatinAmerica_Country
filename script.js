@@ -21,6 +21,8 @@ const countries = [
 //---random  name of country
 let secretCountry = countries[Math.floor(Math.random() * countries.length)];
 console.log(secretCountry);
+let space = " ";
+console.log(secretCountry + space);
 
 secretCountry.charAt(0);
 
@@ -52,7 +54,10 @@ btnGame.addEventListener("click", (e) => {
     message.textContent = "⛔ Write a country!";
 
     // Correct answer
-  } else if (guessCountry === secretCountry) {
+  } else if (
+    guessCountry === secretCountry ||
+    guessCountry === secretCountry + space
+  ) {
     message.textContent = "🎉You win!";
     hiddenCountry.textContent = secretCountry.toUpperCase();
     body.style.backgroundColor = "#73C6B6";
