@@ -20,9 +20,7 @@ const countries = [
 
 //---random  name of country
 let secretCountry = countries[Math.floor(Math.random() * countries.length)];
-console.log(secretCountry);
 let space = " ";
-console.log(secretCountry + space);
 
 secretCountry.charAt(0);
 
