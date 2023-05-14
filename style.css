@@ -9,6 +9,7 @@ html {
 
 body {
   width: 100%;
+  max-width: 70rem;
   margin: 0 auto;
   font-family: "Press start 2p", sans-serif;
   text-align: center;
@@ -61,7 +62,7 @@ h1 {
   align-items: center;
 }
 .box-game {
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 
 .box-guess-score {
@@ -127,18 +128,21 @@ h1 {
 }
 
 @media screen and (min-width: 35rem) {
-  main {
-    /* width: 80rem; */
-  }
-  .box-flag {
-    /* width: 80rem; */
-  }
-
   .grid-game {
     /* width: 70rem; */
 
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    padding: 0 2rem;
+  }
+
+  .box-guess-score {
+    padding-top: 1.5rem;
+    gap: 2.5rem;
+  }
+
+  .how-play-text {
+    padding: 0;
   }
 }
