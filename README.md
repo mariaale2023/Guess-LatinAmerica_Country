@@ -4,7 +4,7 @@
 
 "Guess The South America Country" is a simple web project that challenges your knowledge about the 12 countries in South America. In this game, you will have three chances to guess the correct country. The project includes three files: index.html, style.css, and script.js. You can check out the live demo of the project [here](https://guess-southamerica-country.netlify.app/).
 
-[Game](./IMG/GAME.jpeg)
+![Game](./IMG/GAME.jpeg)
 
 ## How to Play
 
