@@ -1,4 +1,7 @@
-# Guess The South America Country
+# Guess The South American Country
+
+![guess](guess.jpg)
+*image created by dall-e*
 
 ## Introduction
 
